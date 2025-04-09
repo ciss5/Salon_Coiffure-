@@ -1,0 +1,110 @@
+/* 📅 Style principal du calendrier */
+.full-calendar {
+  max-width: 90%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+  border: 2px solid #D4AF37;
+}
+
+/* 🔳 Forcer la couleur noire et supprimer le soulignement des jours dans l'en-tête */
+.fc-col-header-cell a.fc-col-header-cell-cushion {
+  color: black !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+/* 🖱️ Effet au survol pour améliorer la visibilité */
+.fc-col-header-cell a.fc-col-header-cell-cushion:hover {
+  color: #6B4226 !important; /* Marron doux */
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+/* 🎯 Mise en valeur du jour actuel */
+.fc-day-today {
+  background-color: rgba(212, 175, 55, 0.1) !important; /* Doré léger */
+  border: 2px solid #D4AF37 !important;
+}
+
+/* Amélioration de la barre d’outils */
+.fc-toolbar {
+  background-color: #D4AF37 !important;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+/*  Style des événements réservés */
+.fc-event-reserved {
+  background-color: #dc3545 !important;
+  border: none !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.fc-event-reserved:hover {
+  background-color: #bb2d3b !important;
+  transform: scale(1.05);
+}
+
+/* Style des créneaux disponibles */
+.fc-event-available {
+  background-color: #28a745 !important;
+  border: none !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.fc-event-available:hover {
+  background-color: #218838 !important;
+  transform: scale(1.05);
+}
+
+/* Boutons du calendrier */
+button {
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #D4AF37; /* 🌟 Doré pour les boutons */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #b8972f;
+  opacity: 0.9;
+}
+
+/*  Désactiver le clic sur les jours passés  */
+.fc-day-past {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Responsive : sur mobile */
+@media (max-width: 768px) {
+  .full-calendar {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .fc-toolbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}

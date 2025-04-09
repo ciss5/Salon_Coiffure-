@@ -1,0 +1,81 @@
+/* 🎨 Arrière-plan avec une image floutée ou un dégradé */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/assets/images/presentation/presentation1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(6px); /* Flou pour un effet élégant */
+}
+
+/* Carte de connexion */
+.login-card {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  transform: scale(1.02);
+}
+
+/*Titre */
+.title-style {
+  color: #D4AF37;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Georgia', serif;
+}
+
+/*Champs de saisie */
+.input-style {
+  border: 2px solid #C4A484;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  background: #FFF;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-style:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.7);
+}
+
+/*Bouton personnalisé */
+.btn-custom {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(135deg, #388E3C, #1B5E20);
+  transform: scale(1.05);
+}
+
+/* Liens */
+.text-decoration-none {
+  color: #4CAF50;
+}
+
+.text-decoration-none:hover {
+  text-decoration: underline;
+}
+
+/*Responsive */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+    padding: 20px;
+  }
+}

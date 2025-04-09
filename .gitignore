@@ -1,0 +1,47 @@
+# Voir https://docs.github.com/get-started/getting-started-with-git/ignoring-files
+
+# Sortie compilée
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node.js
+/node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+vendor/
+.angular/cache/
+
+
+# Fichiers liés à TypeScript
+*.tsbuildinfo
+
+# IDEs et éditeurs
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/
+
+# Fichiers de cache et logs
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+.jest/
+.nyc_output/
+
+# Fichiers système
+.DS_Store
+Thumbs.db

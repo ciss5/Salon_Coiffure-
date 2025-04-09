@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="card login-card shadow-lg p-4">
+    <h3 class="text-center mb-3 title-style">🔐 Connexion</h3>
+    <form (ngSubmit)="onLogin()">
+      <div class="mb-3">
+        <label class="form-label">📧 Email</label>
+        <input type="email" class="form-control input-style" [(ngModel)]="email" name="email" required placeholder="Entrez votre email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">🔑 Mot de passe</label>
+        <input type="password" class="form-control input-style" [(ngModel)]="password" name="password" required placeholder="Entrez votre mot de passe">
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Se souvenir de moi</label>
+        </div>
+        <a routerLink="/forgot-password" class="text-decoration-none">Mot de passe oublié ?</a>
+      </div>
+      <button type="submit" class="btn btn-custom w-100 mt-3"> Se connecter</button>
+    </form>
+    <!--Message d'erreur -->
+    <p class="text-center text-danger mt-2">{{ message }}</p>
+    <p class="text-center mt-3">
+      Pas encore de compte ? <a routerLink="/register" class="text-decoration-none">Inscrivez-vous</a>
+    </p>
+  </div>
+</div>

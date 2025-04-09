@@ -1,0 +1,96 @@
+/*  Style global du conteneur */
+/*  Image de fond sur toute la section */
+.body {
+  background: url('/assets/images/presentation/presentation.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin-top:0;
+}
+/*  Titre principal */
+.title-style {
+  color: #D4AF37; /* Doré champêtre */
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 25px;
+}
+
+/*  Style du calendrier */
+.calendar-container {
+  background: #FAF3E0; /* Beige doux */
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style du formulaire de réservation */
+.reservation-form {
+  background: #FFF8E1; /* Beige plus clair */
+  border-radius: 12px;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+/*  Effet au survol pour rendre interactif */
+.reservation-form:hover {
+  transform: scale(1.02);
+}
+
+/*  Style des labels */
+.form-label {
+  font-weight: bold;
+  color: #6B4226; /* Marron doux */
+  font-family: 'Georgia', serif;
+}
+
+/* 🖋️ Champs du formulaire */
+.input-style {
+  border: 2px solid #C4A484; /* Marron clair */
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  background: #FFF; /* Blanc pour bien ressortir */
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Effet focus */
+.input-style:focus {
+  border-color: #D4AF37; /* Doré champêtre */
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  outline: none;
+}
+
+/* ✅ Bouton personnalisé */
+.btn-custom {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Vert forêt */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Effet bouton au survol */
+.btn-custom:hover {
+  background: linear-gradient(135deg, #2E7D32, #1B5E20);
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-4, .col-md-8 {
+    width: 100%;
+  }
+
+  .reservation-form {
+    margin-top: 20px;
+  }
+}

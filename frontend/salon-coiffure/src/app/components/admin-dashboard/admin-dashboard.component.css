@@ -1,0 +1,53 @@
+/* 🎨 Style général */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* 📅 Style du calendrier */
+.full-calendar {
+  max-width: 90%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🟥 Marquer les réservations en rouge */
+.fc-event {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* 📆 Changer la couleur des jours */
+.fc-daygrid-day {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* 🏆 Style des boutons */
+button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .full-calendar {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}

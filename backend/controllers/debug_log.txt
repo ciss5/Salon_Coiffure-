@@ -1,0 +1,8 @@
+Array
+(
+    [action] => login
+    [email] => teste4@gmail.com
+    [password] => 123456789
+)
+Password en base: $2y$10$L.z8H1bSynMUGjGvlIxVa.ezEebR8xlqzQkcsWAd2Bqxh0C6ZE/oO
+Password entré: 123456789

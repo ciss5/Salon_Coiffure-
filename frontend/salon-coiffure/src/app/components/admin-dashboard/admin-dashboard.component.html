@@ -1,0 +1,39 @@
+<div class="container my-4">
+  <h2 class="text-center text-success">Tableau de bord Administrateur</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Utilisateur</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Heure de début</th>
+        <th>Heure de fin</th>
+        <th>Statut</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let res of reservations">
+        <td>{{ res.id }}</td>
+        <td>{{ res.user_name }}</td>
+        <td>{{ res.user_email }}</td>
+        <td>{{ res.date }}</td>
+        <td>{{ res.time }}</td>
+        <td>{{ res.end_time }}</td>
+        <td>
+            <span class="badge" [ngClass]="{'bg-warning': res.status === 'pending', 'bg-success': res.status === 'approved', 'bg-danger': res.status === 'cancelled'}">
+              {{ res.status ? res.status : 'En attente' }}
+            </span>
+        </td>
+        <td>
+          <button *ngIf="res.status === 'pending'" class="btn btn-success btn-sm" (click)="approveReservation(res.id)">Approuver</button>
+          <button *ngIf="res.status === 'pending'" class="btn btn-danger btn-sm" (click)="cancelReservation(res.id)">Annuler</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

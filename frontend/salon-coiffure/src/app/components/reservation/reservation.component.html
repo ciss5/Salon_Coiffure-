@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="body">
+  <div class="container">
+    <h2 class="text-center title-style">📅 Réserver un créneau</h2>
+
+    <div class="row d-flex">
+      <!-- 📆 Calendrier des réservations -->
+      <div class="col-md-8">
+        <div class="calendar-container shadow-lg rounded p-3">
+          <app-calendar></app-calendar>
+        </div>
+      </div>
+
+      <!-- 📝 Formulaire de réservation -->
+      <div class="col-md-4">
+        <div class="reservation-form p-4 shadow-lg">
+          <form (ngSubmit)="onReserve()">
+            <!-- 📆 Date -->
+            <div class="mb-3">
+              <label class="form-label">📆 Date :</label>
+              <input type="date" class="form-control input-style" [(ngModel)]="date" name="date" required />
+            </div>
+
+            <!-- 🕒 Heure de début -->
+            <div class="mb-3">
+              <label class="form-label">🕒 Heure de début :</label>
+              <input type="time" class="form-control input-style" [(ngModel)]="time" name="time" (change)="updateEndTime()" required />
+            </div>
+
+            <!-- ⏳ Heure de fin -->
+            <div class="mb-3">
+              <label class="form-label">⏳ Heure de fin :</label>
+              <input type="time" class="form-control input-style" [(ngModel)]="endTime" name="endTime" [min]="minEndTime" required readonly />
+            </div>
+
+            <!-- ✅ Bouton de réservation -->
+            <button type="submit" class="btn btn-custom w-100"> Réserver</button>
+          </form>
+
+          <p class="text-center text-danger mt-3">{{ message }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
