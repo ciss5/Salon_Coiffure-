@@ -24,19 +24,19 @@ export class PrestationComponent implements OnInit { // Implémentez OnInit
           },
           {
             text: "Des longueurs maîtrisées, une forme parfaite.",
-            image: "assets/images/prestation/femme/coupe1.jpg"
+            image: "assets/images/prestation/femme/coupe2.jpg"
           },
           {
             text: "Transformation capillaire ? On s’en occupe.",
-            image: "assets/images/prestation/femme/coupe1.jpg"
+            image: "assets/images/prestation/femme/coupe3.jpg"
           },
           {
             text: "Carré, dégradé, effilé… la coupe qu’il vous faut.",
-            image: "assets/images/prestation/femme/coupe1.jpg"
+            image: "assets/images/prestation/femme/coupe4.jpg"
           },
           {
             text: "Un coup de ciseaux, un boost de confiance.",
-            image: "assets/images/prestation/femme/coupe1.jpg"
+            image: "assets/images/prestation/femme/coupe5.jpg"
           },
         ],
         homme: [
@@ -46,19 +46,19 @@ export class PrestationComponent implements OnInit { // Implémentez OnInit
           },
           {
             text: "Dégradé propre, contours nets – la base d’un look impeccable.",
-            image: "assets/images/prestation/homme/coupe.jpg"
+            image: "assets/images/prestation/homme/coupe1.jpg"
           },
           {
             text: "Un savoir-faire pro pour une coupe qui dure.",
-            image: "assets/images/prestation/homme/coupe.jpg"
+            image: "assets/images/prestation/homme/coupe2.jpg"
           },
           {
             text: "Style classique ou tendance, à vous de choisir.",
-            image: "assets/images/prestation/homme/coupe.jpg"
+            image: "assets/images/prestation/homme/coupe3.jpg"
           },
           {
             text: "Coupe + taille de barbe : le combo gagnant.",
-            image: "assets/images/prestation/homme/coupe.jpg"
+            image: "assets/images/prestation/homme/coupe4.jpg"
           },
         ],
         enfant: [
@@ -69,28 +69,27 @@ export class PrestationComponent implements OnInit { // Implémentez OnInit
           },
           {
             text: "Dégradé, coupe courte ou classique : tout est possible.",
-            image: "assets/images/prestation/enfant/coupe1home.jpg"
+            image: "assets/images/prestation/enfant/coupe2.jpg"
           },
           {
             text: "Un style cool et facile à entretenir.",
-            image: "assets/images/prestation/enfant/coupe1home.jpg"
+            image: "assets/images/prestation/enfant/coupe3.jpg"
           },
           // Fille
           {
             text: "Coupe mignonne et pratique pour petites fashionistas.",
-            image: "assets/images/prestation/enfant/coupe1home.jpg"
+            image: "assets/images/prestation/enfant/coupef1.jpg"
           },
           {
             text: "Touche fraîcheur pour une chevelure facile à coiffer.",
-            image: "assets/images/prestation/enfant/coupe1home.jpg"
+            image: "assets/images/prestation/enfant/coupef2.jpg"
           },
           {
             text: "Une coupe douce, rapide et adaptée à son âge.",
-            image: "assets/images/prestation/enfant/coupe1home.jpg"
+            image: "assets/images/prestation/enfant/coupef4.jpg"
           },
         ]
       }
-
     },
     {
       title: "Coiffure",
