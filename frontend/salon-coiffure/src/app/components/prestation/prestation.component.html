@@ -20,14 +20,20 @@
   <!-- Détails du service sélectionné -->
   <div class="prestation-details text-center mt-4 p-4">
     <h3>{{ selectedService.title }}</h3>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center container-details-card">
       <ng-container *ngFor="let key of ['femme', 'homme', 'enfant']">
-        <div class="col-md-4" *ngIf="selectedService.details[key]">
-          <img alt="image" [src]="selectedService.details[key].image" class="details-img">
-          <h4>{{ key | titlecase }}</h4>
-          <p>{{ selectedService.details[key].text }}</p>
+        <div class="col-12" *ngIf="selectedService.details[key]">
+          <h4 class="text-center mt-4">{{ key | titlecase }}</h4>
+          <div class="row justify-content-center">
+            <div class="col-md-4 prestation-details-acrd"
+                 *ngFor="let item of selectedService.details[key]">
+              <img alt="image" [src]="item.image" class="details-img">
+              <p>{{ item.text }}</p>
+            </div>
+          </div>
         </div>
       </ng-container>
+
     </div>
   </div>
 
