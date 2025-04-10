@@ -16,7 +16,7 @@ import {CalendarComponent} from '../calendar/calendar.component';
     InfoComponent,
     MarquesComponent,
     FooterComponent,
-    CalendarComponent
+    //CalendarComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

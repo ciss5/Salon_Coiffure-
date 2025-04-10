@@ -12,19 +12,19 @@ import {NgForOf} from '@angular/common';
 })
 export class InfoComponent {
   salonAdresse = {
-    rue: "123 Avenue de la Beauté",
-    ville: "Paris",
-    codePostal: "75001",
+    rue: "14 impasse de Linières",
+    ville: "Metz",
+    codePostal: "57070",
     pays: "France"
   };
-
+//horaire d'ouverture
   horaires = [
     { jour: "Lundi", heures: "Fermé" },
     { jour: "Mardi", heures: "09:00 - 19:00" },
     { jour: "Mercredi", heures: "09:00 - 19:00" },
     { jour: "Jeudi", heures: "09:00 - 19:00" },
     { jour: "Vendredi", heures: "09:00 - 19:00" },
-    { jour: "Samedi", heures: "09:00 - 17:00" },
+    { jour: "Samedi", heures: "09:00 - 19:00" },
     { jour: "Dimanche", heures: "Fermé" }
   ];
 }
