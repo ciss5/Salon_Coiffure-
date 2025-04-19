@@ -12,19 +12,12 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 ### 🔒 Utilisateurs :
 - Créer un compte et se connecter.
 - Consulter les disponibilités (dates/horaires).
-- Effectuer ou annuler une réservation.
 - Recevoir une confirmation après réservation.
 
 ### 🧑‍💼 Administrateurs :
 - Se connecter avec un compte admin.
 - Accéder à la liste des réservations.
 - Approuver ou annuler une réservation.
-
-### 🛠️ Général :
-- Interface intuitive.
-- Gestion des erreurs (ex. : créneau déjà réservé).
-
----
 
 ## 🧰 Contraintes techniques
 
@@ -39,8 +32,6 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 ### 🔐 Sécurité
 - Validation des entrées pour éviter les failles XSS/SQL
 - Hachage des mots de passe (`password_hash()` en PHP)
-
----
 
 ## 📅 Déroulement du projet
 
@@ -74,6 +65,14 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 | end_time  | time     | Heure de fin              |
 | status    | varchar  |pending/approved/cancelled |
 
+### 🔹 Table `consentements`
+| Champ             | Type       | Description               |
+|-------------------|------------|---------------------------|
+| id                | INT        | Clé primaire              |
+| ip_utilisateur    | VARCHAR    | Adresse IP client         |
+| statut            | VARCHAR    | Accepté/Refusé            |
+| date_consentement | DATETIME   | Horodatage                |
+
 ## 🎨 Design & Maquettes
 
 ### Accueil
@@ -95,8 +94,7 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 2. Se connecter avec son email et mot de passe.
 3. Consulter les créneaux disponibles.
 4. Faire une réservation.
-5. Annuler si besoin via l'historique.
-6. Recevoir une confirmation par email.
+5. Recevoir une confirmation par email.
 
 ### 👨‍💼 Pour les administrateurs :
 1. Se connecter avec un compte admin.
@@ -106,12 +104,39 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 5. Un email automatique est envoyé à l'utilisateur.
 
 ## ⚙️ Guide Technique
+## ⚙️ Installation
+### Prérequis
+- Node.js 14+
+- PHP 8.0+
+- MySQL 5.7+
+- Composer
+- Git
 
+### 🚀 Déploiement rapide
+
+1. **Cloner le dépôt**
+```bash
+https://github.com/ciss5/Salon_Coiffure-.git
+cd mon-salon-coiffure
 ### 📂 Structure des dossiers :
+.
+├── backend/
+│   ├── app/               # Logique métier
+│   ├── database/          # Migrations & seeds
+│   ├── public/            # Point d'entrée API
+│   └── .env.example       # Configuration
+├── frontend/
+│   ├── src/
+│   │   ├── app/           # Composants Angular
+│   │   ├── assets/        # Styles/images
+│   │   └── environments/  # Configs
+│   └── angular.json       # Configuration Angular
+└── README.md              # Ce fichier
 
 ### 📡 Backend (PHP)
 - `users.php` : Connexion, inscription, vérification admin
 - `reservation.php` : Création, annulation, approbation
+
 
 ### ⚙️ Frontend (Angular)
 - `auth.service.ts` : Authentification & rôle admin
@@ -124,6 +149,3 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 - Vérification responsive
 - Tests de conflits (double réservation)
 
----
-
----
