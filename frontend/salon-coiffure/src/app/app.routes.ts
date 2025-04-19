@@ -13,8 +13,8 @@ export const routes: Routes = [
   //{ path: 'admin-dashboard', loadComponent: () => import('./components/admin-dashboard/admin-dashboard.component').then(m => m.AdminDashboardComponent) },
   { path: 'prestation', loadComponent: () => import('./components/prestation/prestation.component').then(m => m.PrestationComponent) },
   { path: 'admin-dashboard', loadComponent: () => import('./components/admin-dashboard/admin-dashboard.component').then(m => m.AdminDashboardComponent), canActivate: [AdminGuard] },
-  { path: 'calendar', loadComponent: () => import('./components/calendar/calendar.component').then(m => m.CalendarComponent)
-  }
+  { path: 'calendar', loadComponent: () => import('./components/calendar/calendar.component').then(m => m.CalendarComponent)},
+  { path: 'contact', loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent) },
 ];
 // Active le scroll automatique en haut après navigation
 //export const appRouting = provideRouter(routes, withRouterConfig({ scrollPositionRestoration: 'enabled' }));

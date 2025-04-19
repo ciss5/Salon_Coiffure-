@@ -1,54 +1,56 @@
 <app-navbar></app-navbar>
+<div class="body">
+  <div class="prestation-container container">
+    <h2 class="text-center">Nos Prestations</h2>
 
-<div class="prestation-container container">
-  <h2 class="text-center">Nos Prestations</h2>
-
-  <div class="prestation-list row justify-content-center">
-    <div class="prestation-card col-md-3 col-sm-6"
-         *ngFor="let service of services"
-         (click)="selectService(service)">
-      <div class="image-container">
-        <img [src]="service.image" [alt]="service.title">
-        <div class="overlay">
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
+    <div class="prestation-list row justify-content-center">
+      <div class="prestation-card col-md-3 col-sm-6"
+           *ngFor="let service of services"
+           (click)="selectService(service)">
+        <div class="image-container">
+          <img [src]="service.image" [alt]="service.title">
+          <div class="overlay">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Détails du service sélectionné -->
-  <div class="prestation-details text-center mt-4 p-4">
-    <h3>{{ selectedService.title }}</h3>
-    <div class="row justify-content-center container-details-card">
-      <ng-container *ngFor="let key of ['femme', 'homme', 'enfant']">
-        <div class="col-12" *ngIf="selectedService.details[key]">
-          <h4 class="text-center mt-4">{{ key | titlecase }}</h4>
-          <div class="row justify-content-center">
-            <div class="col-md-4 prestation-details-acrd"
-                 *ngFor="let item of selectedService.details[key]">
-              <img alt="image" [src]="item.image" class="details-img">
-              <p>{{ item.text }}</p>
+    <!-- Détails du service sélectionné -->
+    <div class="prestation-details text-center mt-4 p-4">
+      <h3>{{ selectedService.title }}</h3>
+      <div class="row justify-content-center container-details-card">
+        <ng-container *ngFor="let key of ['femme', 'homme', 'enfant']">
+          <div class="col-12" *ngIf="selectedService.details[key]">
+            <h4 class="text-center mt-4">{{ key | titlecase }}</h4>
+            <div class="row justify-content-center">
+              <div class="col-md-4 prestation-details-acrd"
+                   *ngFor="let item of selectedService.details[key]">
+                <img alt="image" [src]="item.image" class="details-img">
+                <p>{{ item.text }}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </ng-container>
+        </ng-container>
 
+      </div>
     </div>
-  </div>
 
-  <!-- Section Tarifs -->
-  <h2 class="text-center mt-5">Nos Tarifs</h2>
+    <!-- Section Tarifs -->
+    <h2 class="text-center mt-5">Nos Tarifs</h2>
 
-  <div class="tarifs-section container d-flex flex-column align-items-center">
-    <div class="tarif-category my-3 w-100" *ngFor="let category of categories">
-      <h3 class="text-center">{{ category | titlecase }}</h3>
-      <ul class="list-group">
-        <li *ngFor="let tarif of tarifs[category]" class="list-group-item tarif-item d-flex">
-          <div class="tarif-title flex-grow-1">{{ tarif.title }}</div>
-          <div class="tarif-price">{{ tarif.price }}</div>
-        </li>
-      </ul>
+    <div class="tarifs-section container d-flex flex-column align-items-center">
+      <div class="tarif-category my-3 w-100" *ngFor="let category of categories">
+        <h3 class="text-center">{{ category | titlecase }}</h3>
+        <ul class="list-group">
+          <li *ngFor="let tarif of tarifs[category]" class="list-group-item tarif-item d-flex">
+            <div class="tarif-title flex-grow-1">{{ tarif.title }}</div>
+            <div class="tarif-price">{{ tarif.price }}</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

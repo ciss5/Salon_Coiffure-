@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import {FullCalendarModule} from '@fullcalendar/angular';
 import {CalendarComponent} from '../calendar/calendar.component';
 import {NavbarComponent} from '../home/navbar/navbar.component';
+import {FooterComponent} from '../footer/footer.component';
 interface Reservation {
   id: number;
   user_id: number;
@@ -27,6 +28,7 @@ interface Reservation {
     FullCalendarModule,
     CalendarComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   styleUrls: ['./reservation.component.css']
 })

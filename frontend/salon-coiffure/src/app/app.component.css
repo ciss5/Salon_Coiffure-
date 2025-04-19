@@ -1,0 +1,17 @@
+/* Overlay visuel sombre + flou */
+.cookie-visual-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+}
+
+/* Bloque le scroll pendant le consentement */
+body.no-scroll {
+  overflow: hidden;
+}

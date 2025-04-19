@@ -1,14 +1,15 @@
 import { Component, OnInit,Inject, PLATFORM_ID  } from '@angular/core';
 import { CommonModule, NgFor, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from '../home/navbar/navbar.component';
-import { ViewportScroller } from '@angular/common'; // Importez ViewportScroller
+import { ViewportScroller } from '@angular/common';
+import {FooterComponent} from '../footer/footer.component'; // Importez ViewportScroller
 
 @Component({
   selector: 'app-prestation',
   standalone: true,
   templateUrl: './prestation.component.html',
   styleUrls: ['./prestation.component.css'],
-  imports: [CommonModule, NgFor, NavbarComponent]
+  imports: [CommonModule, NgFor, NavbarComponent, FooterComponent]
 })
 export class PrestationComponent implements OnInit { // Implémentez OnInit
   services = [
