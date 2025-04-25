@@ -3,7 +3,7 @@ import { NgcCookieConsentModule, NgcCookieConsentConfig } from 'ngx-cookieconsen
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
-    domain: 'localhost' // change ça en prod par ton domaine réel
+    domain: 'localhost' //a  change en  prod par '.ciss-mame.fr'
   },
   palette: {
     popup: { background: '#2e2e2e', text: '#fff' },

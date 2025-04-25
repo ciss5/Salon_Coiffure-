@@ -66,7 +66,9 @@
   background: #111;
   font-size: 12px;
 }
-
+.footer-bottom p a  {
+  color: white;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .footer-about, .footer-links, .footer-social {

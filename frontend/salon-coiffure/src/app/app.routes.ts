@@ -15,6 +15,11 @@ export const routes: Routes = [
   { path: 'admin-dashboard', loadComponent: () => import('./components/admin-dashboard/admin-dashboard.component').then(m => m.AdminDashboardComponent), canActivate: [AdminGuard] },
   { path: 'calendar', loadComponent: () => import('./components/calendar/calendar.component').then(m => m.CalendarComponent)},
   { path: 'contact', loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent) },
+  { path: 'mentions-legales', loadComponent: () => import('./components/mentions-legales/mentions-legales.component').then(m => m.MentionsLegalesComponent) },
+  { path: 'politique-confidentialite', loadComponent: () => import('./components/politique-confidentialite/politique-confidentialite.component').then(m => m.PolitiqueConfidentialiteComponent)}
+
+
+
 ];
 // Active le scroll automatique en haut après navigation
 //export const appRouting = provideRouter(routes, withRouterConfig({ scrollPositionRestoration: 'enabled' }));

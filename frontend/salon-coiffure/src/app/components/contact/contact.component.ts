@@ -26,6 +26,7 @@ export class ContactComponent {
   constructor(private http: HttpClient) {}
 
   envoyer() {
+    //a changer en prod http://localhost/Mon-salon-coiffure/backend/sendMail.php par :
     this.http.post('http://localhost/Mon-salon-coiffure/backend/sendMail.php', this.contact).subscribe({
       next: (res: any) => {
         if (res.status === 'success') {

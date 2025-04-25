@@ -8,7 +8,7 @@ import { NgIf } from '@angular/common';
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
-    domain: 'localhost'
+    domain: 'localhost' // a change en prod par '.ciss-mame.fr'
   },
   palette: {
     popup: { background: '#2e2e2e', text: '#fff' },

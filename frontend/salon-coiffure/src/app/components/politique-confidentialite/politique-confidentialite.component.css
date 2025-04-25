@@ -1,0 +1,51 @@
+.mention-container {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+}
+
+.mention-container h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mention-container h3 {
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.mention-container p {
+  color: #555;
+}
+
+.mention-container a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.mention-container ul {
+  margin: 0 0 1rem 1rem;
+}
+
+.mention-container ul li {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .mention-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .mention-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .mention-container h3 {
+    font-size: 1.25rem;
+  }
+}
