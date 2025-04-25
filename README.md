@@ -77,7 +77,7 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 
 ### Accueil
 - Présentation du salon
-- Bouton "Se connecter" / "S'inscrire"
+- Bouton "Se connecter"
 
 ### Réservation (Client)
 - Sélection de la date et heure
@@ -121,15 +121,29 @@ cd mon-salon-coiffure
 ### 📂 Structure des dossiers :
 .
 ├── backend/
-│   ├── app/               # Logique métier
-│   ├── database/          # Migrations & seeds
-│   ├── public/            # Point d'entrée API
-│   └── .env.example       # Configuration
+│   ├── config/               # configuration bd
+│   │   ├── config.php/               # Logique métier
+│   ├── controllers/
+│   │   ├── reservation.php/               # Logique métier
+│   │   ├── saveConsent.php/          # Migrations & seeds
+│   │   └── users.php/ 
+├── database/
+│   ├── schema.sql               # Logique métier
+│   └── seed.sql
+├── docs/
+│   ├── maquettes/               # Logique métier
+│   │   ├── maquetteSalon_coiffure/               # Logique métier
+│   ├── cahiers_des_chargers_salon_coif.pdf          # Migrations & seeds
+│   └── Guide_technique.pdf       # Configuration
 ├── frontend/
 │   ├── src/
 │   │   ├── app/           # Composants Angular
 │   │   ├── assets/        # Styles/images
-│   │   └── environments/  # Configs
+│   │   ├── environments/  # Configs
+│   │   ├── index.html/        # Styles/images
+│   │   ├── main.ts/        # Styles/images
+│   │   ├── server.ts/        # Styles/images
+│   │   └── styles.css
 │   └── angular.json       # Configuration Angular
 └── README.md              # Ce fichier
 
