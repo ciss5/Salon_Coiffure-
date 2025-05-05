@@ -45,3 +45,4 @@ testem.log
 # Fichiers système
 .DS_Store
 Thumbs.db
+.env

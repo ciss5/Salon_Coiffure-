@@ -119,33 +119,45 @@ Il a été réalisé dans le cadre d'un projet de fin d'études avec Angular, PH
 https://github.com/ciss5/Salon_Coiffure-.git
 cd mon-salon-coiffure
 ### 📂 Structure des dossiers :
-.
-├── backend/
-│   ├── config/               # configuration bd
-│   │   ├── config.php/               # Logique métier
-│   ├── controllers/
-│   │   ├── reservation.php/               # Logique métier
-│   │   ├── saveConsent.php/          # Migrations & seeds
-│   │   └── users.php/ 
-├── database/
-│   ├── schema.sql               # Logique métier
-│   └── seed.sql
-├── docs/
-│   ├── maquettes/               # Logique métier
-│   │   ├── maquetteSalon_coiffure/               # Logique métier
-│   ├── cahiers_des_chargers_salon_coif.pdf          # Migrations & seeds
-│   └── Guide_technique.pdf       # Configuration
-├── frontend/
+Salon_Coiffure-/
+│
+├── backend/                    # 🔙 Partie serveur (PHP)
+│   ├── config/                 # 🔧 Configuration base de données
+│   │   └── config.php          # → Connexion PDO à MySQL
+│   ├── controllers/            # 🧠 Logique métier API REST
+│   │   ├── reservation.php     # → Réservations (ajout, lecture, annulation)
+│   │   ├── saveConsent.php     # → Sauvegarde des préférences cookies RGPD
+│   │   └── users.php           # → Inscription, connexion des utilisateurs
+│
+├── database/                   # 🗄 Base de données
+│   ├── schema.sql              # → Structure des tables (users, reservations)
+│   └── seed.sql                # → Données de test (optionnel)
+│
+├── docs/                       # 📄 Documentation projet
+│   ├── maquettes/              # 🎨 Maquettes UI/UX
+│   │   └── maquetteSalon_coiffure
+│   ├── cahiers_des_chargers_salon_coif.pdf   # Cahier des charges
+│   └── Guide_technique.pdf                   # Documentation technique
+│
+├── frontend/                   # 🎨 Interface utilisateur (Angular)
 │   ├── src/
-│   │   ├── app/           # Composants Angular
-│   │   ├── assets/        # Styles/images
-│   │   ├── environments/  # Configs
-│   │   ├── index.html/        # Styles/images
-│   │   ├── main.ts/        # Styles/images
-│   │   ├── server.ts/        # Styles/images
-│   │   └── styles.css
-│   └── angular.json       # Configuration Angular
-└── README.md              # Ce fichier
+│   │   ├── app/
+│   │   │   ├── components/      # 🧩 Composants Angular (pages, sections, etc.)
+│   │   │   ├── services/        # 🔌 Services (auth, réservation, API)
+│   │   │   ├── app.component.ts       # Composant principal
+│   │   │   ├── app.module.ts          # Module Angular principal
+│   │   │   ├── app.routing.module.ts  # Routing client
+│   │   │   ├── app.routing.ts  # Routing client
+│   │   │   └── cookie.providers.ts    # Gestion RGPD avec ngx-cookieconsent
+│   │   ├── assets/              # 📷 Images, logos, favicon
+│   │   ├── environments/        # 🌍 Environnements (dev/prod)
+│   │   ├── index.html           # 💡 Fichier racine HTML
+│   │   ├── main.ts              # 🚀 Fichier d'amorçage Angular
+│   │   ├── server.ts            # SSR si activé
+│   │   └── styles.css           # 💅 Styles globaux
+│   └── angular.json            # 📦 Configuration du projet Angular
+│
+└── README.md                   # 📝 Présentation globale du projet (ce fichier)
 
 ### 📡 Backend (PHP)
 - `users.php` : Connexion, inscription, vérification admin
