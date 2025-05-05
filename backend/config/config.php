@@ -3,10 +3,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 // Définition des variables de connexion à la base de données
-$host = "localhost";
-$dbname = "salon_coiffure";  // Le nom de la base de données
-$username = "root";
-$password = "";
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
 /** @var PDO $pdo */
 // Tentative de connexion  via PDO
 try {
