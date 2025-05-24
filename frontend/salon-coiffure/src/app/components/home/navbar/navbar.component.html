@@ -5,11 +5,11 @@
   </div>
 
   <ul class="nav-links" [class.active]="menuOpen">
-    <li><a routerLink="/home">Home</a></li>
-    <li><a routerLink="/prestation">Services</a></li>
-    <li><a routerLink="/our-team">Our Team</a></li>
-    <li><a routerLink="/contact">Contacts</a></li>
-    <li><a routerLink="/reservation">Booking Now</a></li>
+    <li><a routerLink="/home">Accueil</a></li>
+    <li><a routerLink="/prestation">Prestations</a></li>
+    <li><a [routerLink]="['/home']" fragment="our-team" >Notre Equipe</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+    <li><a routerLink="/reservation">Réserver</a></li>
   </ul>
 
   <div class="auth-buttons">

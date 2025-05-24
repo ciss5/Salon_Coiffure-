@@ -40,6 +40,21 @@
 
 /*  Style des événements réservés */
 .fc-event-reserved {
+  font-weight: bold;
+  color: white;
+  background-color: #dc3545 !important;
+  border: none !important;
+}
+
+.fc-event-available {
+  font-weight: bold;
+  color: white;
+  background-color: #28a745 !important;
+  border: none !important;
+}
+
+/*///////*/
+.fc-event-reserved {
   background-color: #dc3545 !important;
   border: none !important;
   color: white !important;

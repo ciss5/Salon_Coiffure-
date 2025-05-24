@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from '../../services/reservation.service';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
+import {NavbarComponent} from '../home/navbar/navbar.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -10,7 +11,8 @@ import {NgClass, NgForOf, NgIf} from '@angular/common';
   imports: [
     NgIf,
     NgForOf,
-    NgClass
+    NgClass,
+    NavbarComponent
   ],
   styleUrls: ['./admin-dashboard.component.css']
 })

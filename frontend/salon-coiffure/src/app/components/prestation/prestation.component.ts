@@ -73,7 +73,7 @@ export class PrestationComponent implements OnInit { // Implémentez OnInit
             image: "assets/images/prestation/enfant/coupe2.jpg"
           },
           {
-            text: "Un style cool et facile à entretenir.",
+            text: "Un style cool et facile à entretenir pour un enfent.",
             image: "assets/images/prestation/enfant/coupe3.jpg"
           },
           // Fille
@@ -312,9 +312,19 @@ export class PrestationComponent implements OnInit { // Implémentez OnInit
       this.viewportScroller.scrollToPosition([0, 0]);
     }
   }
-
+  // Fonction pour que afficher  section des détails
   selectService(service: any) {
     this.selectedService = service;
-    //this.viewportScroller.scrollToPosition([0, 0]); // Défile vers le haut après la sélection
+
+    setTimeout(() => {
+      if (this.isBrowser) {
+        this.viewportScroller.scrollToAnchor('service-details');
+      }
+    }, 100); // Petit délai pour que l'ancre soit présente dans le DOM
   }
+
+  /*selectService(service: any) {
+    this.selectedService = service;
+    //this.viewportScroller.scrollToPosition([0, 0]); // Défile vers le haut après la sélection
+  }*/
 }

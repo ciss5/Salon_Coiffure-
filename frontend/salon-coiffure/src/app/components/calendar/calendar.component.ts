@@ -20,8 +20,8 @@ export class CalendarComponent implements OnInit {
 
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
-    initialView: 'timeGridWeek',//Vue avec heures affichées
-    slotMinTime: '09:00:00',// Début des heures affichées à 9h
+    initialView: 'timeGridWeek',
+    slotMinTime: '09:00:00',
     slotMaxTime: '19:00:00',
     nowIndicator: true,
     selectable: true,
@@ -33,9 +33,7 @@ export class CalendarComponent implements OnInit {
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
     dateClick: this.handleDateClick.bind(this),
-    //eventClick: this.handleEventClick.bind(this) // 🔥 Ajout pour permettre la réservation sur un créneau disponible
   } as CalendarOptions;
-
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -49,13 +47,11 @@ export class CalendarComponent implements OnInit {
         let events = [];
         let today = new Date();
 
-        // Boucle pour générer les créneaux sur une semaine
         for (let i = 0; i < 7; i++) {
           let currentDate = new Date();
           currentDate.setDate(today.getDate() + i);
           let dateStr = currentDate.toISOString().split('T')[0];
 
-          // Ne pas afficher les créneaux du lundi (jour fermé)
           if (currentDate.getDay() === 1) continue;
 
           for (let hour = 9; hour < 19; hour++) {
@@ -63,7 +59,7 @@ export class CalendarComponent implements OnInit {
             let isReserved = reservations.some(res => res.date === dateStr && res.time === timeStr);
 
             events.push({
-              title: isReserved ? 'Réservé' : 'Disponible',
+              title: isReserved ? '🔒 Réservé' : '✅ Disponible',
               start: `${dateStr}T${timeStr}`,
               end: `${dateStr}T${hour + 1}:00:00`,
               backgroundColor: isReserved ? '#dc3545' : '#28a745',
@@ -80,12 +76,12 @@ export class CalendarComponent implements OnInit {
         };
       });
   }
+
   handleDateClick(arg: any) {
     const selectedDate = new Date(arg.dateStr);
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // On enlève l'heure pour comparer uniquement les jours
+    today.setHours(0, 0, 0, 0);
 
-    // 🚫 Bloquer les jours passés
     if (selectedDate < today) {
       alert("Vous ne pouvez pas réserver pour un jour passé !");
       return;
@@ -128,43 +124,4 @@ export class CalendarComponent implements OnInit {
       )
       .subscribe();
   }
-
- /* handleEventClick(arg: any) {
-    // Vérifie si l'événement cliqué est un créneau disponible
-    if (arg.event.title !== "Disponible") {
-      alert("Ce créneau est déjà réservé !");
-      return;
-    }
-
-    const selectedDate = arg.event.startStr.split("T")[0]; // Date sélectionnée
-    const selectedTime = arg.event.startStr.split("T")[1].substring(0, 5); // Heure sélectionnée (HH:MM)
-
-    const userId = localStorage.getItem('user_id');
-    if (!userId) {
-      alert("Vous devez être connecté pour réserver !");
-      this.router.navigate(['/login']);
-      return;
-    }
-
-    const reservationData = {
-      user_id: userId,
-      date: selectedDate,
-      time: selectedTime + ":00"
-    };
-
-    this.http.post('http://localhost/Mon-salon-coiffure/backend/controllers/reservation.php', reservationData)
-      .pipe(
-        tap(() => {
-          alert(`✅ Réservation confirmée pour ${selectedDate} à ${selectedTime} !`);
-          this.loadReservations(); // Recharger le calendrier
-        }),
-        catchError(error => {
-          alert("❌ Erreur lors de la réservation. Vérifiez que le créneau est disponible.");
-          console.error("Erreur de réservation :", error);
-          return of(null);
-        })
-      )
-      .subscribe();
-  }*/
-
 }

@@ -3,6 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {NavbarComponent} from '../home/navbar/navbar.component';
 import {FooterComponent} from '../footer/footer.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,8 @@ import {FooterComponent} from '../footer/footer.component';
   imports: [
     FormsModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RouterLink
   ],
   styleUrls: ['./contact.component.css']
 })
