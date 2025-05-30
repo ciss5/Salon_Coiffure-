@@ -96,7 +96,15 @@ export class CalendarComponent implements OnInit {
       alert("Les réservations doivent être entre 09h et 19h !");
       return;
     }
+// Crée un objet Date complet avec heure + date
+    const reservationDateTime = new Date(arg.dateStr);
+    reservationDateTime.setHours(hour, minute, 0, 0);
 
+    const now = new Date();
+    if (reservationDateTime < now) {
+      alert("Vous ne pouvez pas réserver pour une heure déjà passée !");
+      return;
+    }
     const userId = localStorage.getItem('user_id');
     if (!userId) {
       alert("Vous devez être connecté pour réserver !");

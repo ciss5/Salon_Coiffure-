@@ -53,7 +53,7 @@ try {
 
     // Destinataire
     $mail->setFrom($email, $nom);
-    $mail->addAddress('mamegorciss5@gmail.com'); // Où tu veux recevoir le message
+    $mail->addAddress('mamegorciss5@gmail.com'); // Où  recevoir le message
 
     // Contenu
     $mail->isHTML(false);
